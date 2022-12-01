@@ -7,7 +7,6 @@ if __name__ == "__main__":
         print(f"{len(argv) - 1} argument:")
     else:
         print(f"{len(argv) - 1} arguments:")
-    
-    for i in range(len(argv)):
-        if i != 0:
-            print(f"{i}: {argv[i]}")
+        for i in range(len(argv)):
+            if i != 0:
+                print(f"{i}: {argv[i]}")
