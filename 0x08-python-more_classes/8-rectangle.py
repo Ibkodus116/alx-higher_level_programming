@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-A class Rectangle that defines a rectangle by: (based on 5-rectangle.py)
+A class Rectangle that defines a rectangle by: (based on 7-rectangle.py)
 
 """
 
@@ -117,6 +117,7 @@ class Rectangle:
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
 
+    @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """
         Static method that returns the biggest
