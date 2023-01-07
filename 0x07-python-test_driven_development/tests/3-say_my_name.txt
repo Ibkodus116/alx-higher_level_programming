@@ -1,0 +1,34 @@
+The ``3-say_my_name`` module
+============================
+
+Using ``3-say_my_name``
+---------------------
+
+Importing function from the module:
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+check noramal value i.e string
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+
+check abnoramal value i.e boolean
+    >>> say_my_name("John", True)
+    Traceback (most recent call last):
+	      ...
+    TypeError: last_name must be a string
+
+check 2nd args value as boolean
+    >>> say_my_name("John", True)
+    Traceback (most recent call last):
+	      ...
+    TypeError: last_name must be a string
+
+check 1st args value as boolean
+    >>> say_my_name(True, "True")
+    Traceback (most recent call last):
+	      ...
+    TypeError: first_name must be a string
+
+check noramal value i.e string
+    >>> say_my_name("John")
+    My name is John 
