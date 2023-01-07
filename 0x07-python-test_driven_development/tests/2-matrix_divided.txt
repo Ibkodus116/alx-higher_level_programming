@@ -29,25 +29,25 @@ check empty matrix
     >>> matrix_divided([], 8)
     Traceback (most recent call last):
             ...
-    TypeError: matrix must be a matrix(list of lists) of integers/floats
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 check empty list lists
     >>> matrix_divided([[],[]], 5)
     Traceback (most recent call last):
             ...
-    TypeError: matrix must be a matrix(list of lists) of integers/floats
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 making matrix a boolean
     >>> matrix_divided(True, 5)
     Traceback (most recent call last):
             ...
-    TypeError: matrix must be a matrix(list of lists) of integers/floats
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 making the list list a non int or float
     >>> matrix_divided([[None], [True]], 5)
     Traceback (most recent call last):
             ...
-    TypeError: matrix must be a matrix(list of lists) of integers/floats
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 making the list list unequal size
     >>> matrix_divided([[1,3,4,5], [5,3,2]], 5)
