@@ -7,8 +7,7 @@ Module containing a function that prints First name and last name
 
 
 def say_my_name(first_name, last_name=""):
-    """
-    A function that prints My name is <first name> <last name>
+    """A function that prints My name is <first name> <last name>
 
     Args:
         first_name: the first name
