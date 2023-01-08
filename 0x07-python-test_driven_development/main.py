@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-""" Doc """
 
-print_square = __import__('4-print_square').print_square
+text_indentation = __import__('5-text_indentation').text_indentation
 
-print_square(0)
+text_indentation("is this play? what kind of play is this: play play? or palyful. this one self done do.")
