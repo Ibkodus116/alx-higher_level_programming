@@ -27,11 +27,20 @@ def text_indentation(text):
     words = ""
     lst = []
 
-    for i in range(len(text)):
-        words += text[i]
+    if "." in text or "?" in text or ":" in text:
+        for i in range(len(text)):
+            words += text[i]
 
-        if text[i] == "." or text[i] == "?" or text[i] == ":":
-            lst.append(words)
-            words = ""
-    for x in lst:
-        print(x.strip(" ") + "\n\n", end="")
+            if text[i] == "." or text[i] == "?" or text[i] == ":":
+                j = i
+                lst.append(words)
+                words = ""
+        for x in lst:
+            print(x.strip(" ") + "\n")
+
+        extra = text[j+1:i+1]
+        if extra:
+            print(extra.strip(" "), end="")
+    else:
+        if text:
+            print(text)
