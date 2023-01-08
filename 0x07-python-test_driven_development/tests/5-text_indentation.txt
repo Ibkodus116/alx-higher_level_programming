@@ -77,3 +77,7 @@ check when string is passed
     <BLANKLINE>
     this one self done do.
     <BLANKLINE>
+
+check when string without ".?:" isn't passed
+    >>> text_indentation("my house")
+    my house
