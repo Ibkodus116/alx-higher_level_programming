@@ -18,7 +18,6 @@ Testing for correct argument
 
 Testing for correct argument
     >>> print_square(0)
-    <BLANKLINE>
 
 Testing for argument float
     >>> print_square(0.5)
