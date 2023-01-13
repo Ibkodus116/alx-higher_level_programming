@@ -54,3 +54,14 @@ Instance has the correct type
     >>> my_list = MyList()
     >>> type(my_list) == MyList
     True
+
+Printing with a negative number
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(-4)
+    >>> my_list.append(2)
+    >>> my_list.append(-1)
+    >>> my_list.append(2)
+    >>> my_list += [0]
+    >>> my_list.print_sorted()
+    [-4, -1, 0, 1, 2, 2]
