@@ -1,0 +1,43 @@
+The ``7-base_geometry`` module
+============================
+
+Using ``base_geometry``
+---------------------
+
+Importing function from the module:
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Testing when value is string
+    >>> bg = BaseGeometry()
+    >>> print(bg.integer_validator("my_int", "12"))
+    Traceback (most recent call last):
+            ...
+    TypeError: my_int must be an integer
+
+Testing when value is a list
+    >>> bg = BaseGeometry()
+    >>> print(bg.integer_validator("my_int", [12]))
+    Traceback (most recent call last):
+            ...
+    TypeError: my_int must be an integer
+
+Testing when value is not greater than 0
+    >>> bg = BaseGeometry()
+    >>> print(bg.integer_validator("age", 0))
+    Traceback (most recent call last):
+            ...
+    TypeError: age must be greater than 0
+
+Testing with a negative value
+    >>> bg = BaseGeometry()
+    >>> print (bg.integer_validator("distance", -4))
+    Traceback (most recent call last):
+            ...
+    TypeError: distance must be greater than 0
+
+Testing with a empty value
+    >>> bg = BaseGeometry()
+    >>> print (bg.integer_validator("distance"))
+    Traceback (most recent call last):
+            ...
+    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
