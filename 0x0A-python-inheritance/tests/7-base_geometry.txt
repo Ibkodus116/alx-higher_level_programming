@@ -26,14 +26,14 @@ Testing when value is not greater than 0
     >>> print(bg.integer_validator("age", 0))
     Traceback (most recent call last):
             ...
-    TypeError: age must be greater than 0
+    ValueError: age must be greater than 0
 
 Testing with a negative value
     >>> bg = BaseGeometry()
     >>> print (bg.integer_validator("distance", -4))
     Traceback (most recent call last):
             ...
-    TypeError: distance must be greater than 0
+    ValueError: distance must be greater than 0
 
 Testing with a empty value
     >>> bg = BaseGeometry()
