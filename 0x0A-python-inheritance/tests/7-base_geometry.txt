@@ -41,3 +41,42 @@ Testing with a empty value
     Traceback (most recent call last):
             ...
     TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Testing for area
+    >>> bg = BaseGeometry()
+    >>> print (bg.area())
+    Traceback (most recent call last):
+            ...
+    Exception: area() is not implemented
+
+Testing with an intiger value
+    >>> bg = BaseGeometry()
+    >>> print (bg.integer_validator("distance", 1))
+    None
+
+Testing with tupple value
+    >>> bg = BaseGeometry()
+    >>> print (bg.integer_validator("age", (1,)))
+    Traceback (most recent call last):
+            ...
+    TypeError: age must be an integer
+
+Testing with boolean value
+    >>> bg = BaseGeometry()
+    >>> print (bg.integer_validator("age", True))
+    None
+
+Testing with None value
+    >>> bg = BaseGeometry()
+    >>> print (bg.integer_validator("age", None))
+    Traceback (most recent call last):
+            ...
+    TypeError: age must be an integer
+
+Testing with Dict value
+    >>> bg = BaseGeometry()
+    >>> print (bg.integer_validator("age", {2,5}))
+    Traceback (most recent call last):
+            ...
+    TypeError: age must be an integer
+
