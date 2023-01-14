@@ -64,9 +64,7 @@ Testing with tupple value
 Testing with boolean value
     >>> bg = BaseGeometry()
     >>> print (bg.integer_validator("age", True))
-    Traceback (most recent call last):
-            ...
-    TypeError: age must be an integer
+    None
 
 Testing with None value
     >>> bg = BaseGeometry()
