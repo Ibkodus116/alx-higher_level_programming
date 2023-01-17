@@ -3,7 +3,9 @@
 """
 Module for file opening
 """
-def read_file(filename="", encoding="utf-8"):
+
+
+def read_file(filename=""):
     """Function Opening a file for reading"""
-    with open(filename) as f:
+    with open(filename, encoding="utf-8") as f:
         print(f.read())
