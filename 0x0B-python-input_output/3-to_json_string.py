@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-import json as j
 
 """
 Module for json files in this particular project
 """
 
+import json as j
 
 def to_json_string(my_obj):
     """Function for json"""
