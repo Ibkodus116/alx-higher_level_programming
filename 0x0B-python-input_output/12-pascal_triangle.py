@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 
 def pascal_triangle(n):
+    """
+    Function Doc
+    """
     triangle = []
     for i in range(n):
         row = [1] * (i + 1)
