@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 import json as j
+
 """
-Module for json files
+Module for json files in this particular project
 """
 
 
