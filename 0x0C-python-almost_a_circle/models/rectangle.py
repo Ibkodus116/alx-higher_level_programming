@@ -81,12 +81,17 @@ class Rectangle(Base):
 
     def display(self):
         """Method that returns the area of a rectangle"""
-        print_out = "#" * self.width
-        for i in range(0, self.height):
-            print(print_out)
+        print_width = "#" * self.width
+        print_x = " " * self.x
+        print_y = "\n" * self.y
+        rectangle = print_y
+        for i in range(self.height):
+            rectangle += print_x
+            rectangle += print_width + "\n"
+        print(rectangle, end="")
 
     def __str__(self):
-
+        """The str method which print to stdout"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.x, self.y, self.width, self.height
             )
