@@ -96,10 +96,12 @@ class Rectangle(Base):
             self.id, self.x, self.y, self.width, self.height
             )
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Update method"""
-
         lst_attr = ['id', 'width', 'height', 'x', 'y']
         if args and len(args) > 0:
             for i in range(len(args)):
                 setattr(self, lst_attr[i], args[i])
+        else:
+            for key, values in kwargs.items():
+                setattr(self, key, values)
