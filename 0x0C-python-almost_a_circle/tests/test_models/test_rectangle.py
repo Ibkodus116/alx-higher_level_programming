@@ -152,7 +152,7 @@ class TestRectangle(unittest.TestCase):
     # def test_strp(self):
     #     """Testing str output"""
     #     r = Rectangle(2, 3, 4)
-    #     str_out = "[Rectangle] (0) 4/0 - 2/3\n"
+    #     str_out = "[Rectangle] (9) 4/0 - 2/3\n"
 
     #     with patch('sys.stdout', new=StringIO()) as output:
     #         print(r)
