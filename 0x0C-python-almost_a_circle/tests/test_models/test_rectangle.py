@@ -6,6 +6,10 @@ from models.rectangle import Rectangle
 
 class TestRectangle(unittest.TestCase):
     """Class Hanlding the unittest cases for our rectangle"""
+    def set_up(self):
+        """Method to setup each test"""
+        Base._Base__nb_object = 0
+
     def test_init(self):
         """Test case for Rectanlge"""
         r = Rectangle(10, 20, 30, 40)
