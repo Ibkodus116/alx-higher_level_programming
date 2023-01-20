@@ -33,3 +33,10 @@ class Base:
 
         with open(f"{name}.json", "w") as f:
             f.write(cls.to_json_string(list_dict))
+
+    @staticmethod
+    def from_json_string(json_string):
+        "Return json strings to python Dict obj"
+        if not json_string:
+            return []
+        return [json.loads(json_string)]
