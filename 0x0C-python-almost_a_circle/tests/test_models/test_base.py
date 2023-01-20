@@ -1,5 +1,6 @@
 import unittest
 from models.base import Base
+import json
 
 """Our Testing module"""
 
@@ -50,3 +51,22 @@ class TestCaseModels(unittest.TestCase):
         """
         with self.assertRaises(TypeError):
             new = Base(1, 2)
+
+    def test_obj_dict_to_json(self):
+        """object values are converted to json str"""
+        self.assertEqual(Base.to_json_string([{'x': 2,
+                        'width': 10,
+                        'id': 1,
+                        'height': 7,
+                        'y': 8}]
+                        ),
+                        '[{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}]'
+                        )
+
+    def test_obj_list_to_json(self):
+        """object values are converted to json str"""
+        self.assertEqual(Base.to_json_string([[12,3,4]]),'[[12, 3, 4]]')
+
+    def test_obj_empty_list_to_json(self):
+        """Empty object values are converted to json str"""
+        self.assertEqual(Base.to_json_string([]),[])
