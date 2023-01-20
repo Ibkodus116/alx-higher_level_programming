@@ -70,3 +70,8 @@ class TestCaseModels(unittest.TestCase):
     def test_obj_empty_list_to_json(self):
         """Empty object values are converted to json str"""
         self.assertEqual(Base.to_json_string([]),[])
+
+    def test_none_to_json(self):
+        """Empty object values are converted to json str"""
+        with self.assertRaises(TypeError):
+            Base.to_json_string()
