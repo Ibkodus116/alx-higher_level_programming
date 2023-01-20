@@ -38,3 +38,10 @@ class Square(Rectangle):
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
+    def to_dictionary(self):
+        """Returns a Dictionary for the Square"""
+        tpl_dict = ('id', 'size', 'x', 'y')
+        my_dict = {}
+        for key in tpl_dict:
+            my_dict[key] = getattr(self, key)
+        return my_dict
