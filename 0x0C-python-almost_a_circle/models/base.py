@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module Doc for a longe thing"""
 import json
+import os
 
 
 class Base:
@@ -50,3 +51,21 @@ class Base:
             new = cls(10)
         new.update(**dictionary)
         return new
+
+    @classmethod
+    def load_from_file(cls):
+        name = cls.__name__
+
+        if not os.path.exists(f"{name}.json"):
+            return []
+
+        with open(f"{name}.json", 'r') as f:
+            f_file = f.read()
+
+        list_cls = cls.from_json_string(f_file)
+        list_ins = []
+
+        for index in range(len(list_cls)):
+            list_ins.append(cls.create(**list_cls[index]))
+
+        return list_ins
