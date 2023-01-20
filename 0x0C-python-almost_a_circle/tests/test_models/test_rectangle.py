@@ -31,11 +31,12 @@ class TestRectangle(unittest.TestCase):
         """Test case for Rectanlge"""
         r = Rectangle(10, 20, id=1)
         self.assertEqual(r.id, 1)
-
-    # def test_init_with_no_id(self):
-    #     """Test case for Rectanlge"""
-    #     r = Rectangle(10, 20)
-    #     self.assertEqual(r.id, 1)
+# ================================================
+    def test_init_with_no_id(self):
+        """Test case for Rectanlge"""
+        r = Rectangle(10, 20)
+        self.assertEqual(r.id, 1)
+# ================================================
 
     def test_width_setter(self):
         """Test case for Rectanlge"""
@@ -146,22 +147,23 @@ class TestRectangle(unittest.TestCase):
             print(r)
             self.assertEqual(output.getvalue(), str_output)
 
-    # def test_str2(self):
-    #     """Testing str Output 2"""
-    #     r = Rectangle(5, 5, 9, 8)
-    #     str_output = "[Rectangle] (1) 9/8 - 5/5\n"
-    #     with patch('sys.stdout', new=StringIO()) as output:
-    #         print(r)
-    #         self.assertEqual(output.getvalue(), str_output)
+# ========================================================
+    def test_str2(self):
+        """Testing str Output 2"""
+        r = Rectangle(5, 5, 9, 8)
+        str_output = "[Rectangle] (1) 9/8 - 5/5\n"
+        with patch('sys.stdout', new=StringIO()) as output:
+            print(r)
+            self.assertEqual(output.getvalue(), str_output)
+    def test_strp(self):
+        """Testing str output"""
+        r = Rectangle(2, 3, 4)
+        str_out = "[Rectangle] (1) 4/0 - 2/3\n"
 
-    # def test_strp(self):
-    #     """Testing str output"""
-    #     r = Rectangle(2, 3, 4)
-    #     str_out = "[Rectangle] (9) 4/0 - 2/3\n"
-
-    #     with patch('sys.stdout', new=StringIO()) as output:
-    #         print(r)
-    #         self.assertEqual(output.getvalue(), str_out)
+        with patch('sys.stdout', new=StringIO()) as output:
+            print(r)
+            self.assertEqual(output.getvalue(), str_out)
+# ========================================================
 
     def test_update(self):
         """Testing for the update method"""
@@ -189,10 +191,9 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r.to_dictionary(),
         {'id': 12, 'width': 2, 'height': 6, 'x': 4, 'y': 5})
 
-    # def test_to_dict_method(self):
-    #     """Testing when dictionary is returned"""
-    #     r = Rectangle(2, 6, 4, 5)
-    #     self.assertEqual(r.to_dictionary(),
-    #     {'id': 1, 'width': 2, 'height': 6, 'x': 4, 'y': 5})
+    def test_to_dict_method(self):
+        """Testing when dictionary is returned"""
+        r = Rectangle(2, 6, 4, 5)
+        self.assertEqual(r.to_dictionary(),
+        {'id': 1, 'width': 2, 'height': 6, 'x': 4, 'y': 5})
 
-    
