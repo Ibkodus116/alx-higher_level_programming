@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import json
 """Module Doc for a longe thing"""
+import json
 
 
 class Base:
