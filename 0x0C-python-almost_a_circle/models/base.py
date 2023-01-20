@@ -39,4 +39,4 @@ class Base:
         "Return json strings to python Dict obj"
         if not json_string:
             return []
-        return [json.loads(json_string)]
+        return json.loads(json_string)
