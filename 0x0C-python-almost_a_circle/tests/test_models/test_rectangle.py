@@ -32,6 +32,11 @@ class TestRectangle(unittest.TestCase):
         r = Rectangle(10, 20, id=1)
         self.assertEqual(r.id, 1)
 
+    # def test_init_with_no_id(self):
+    #     """Test case for Rectanlge"""
+    #     r = Rectangle(10, 20)
+    #     self.assertEqual(r.id, 1)
+
     def test_width_setter(self):
         """Test case for Rectanlge"""
         r = Rectangle(10, 20)
@@ -177,3 +182,17 @@ class TestRectangle(unittest.TestCase):
             r.update(3, 1, 2, 4, 2)
             print(r)
             self.assertEqual(output.getvalue(), out)
+
+    def test_to_dict(self):
+        """Testing when dictionary is returned"""
+        r = Rectangle(2, 6, 4, 5, 12)
+        self.assertEqual(r.to_dictionary(),
+        {'id': 12, 'width': 2, 'height': 6, 'x': 4, 'y': 5})
+
+    # def test_to_dict_method(self):
+    #     """Testing when dictionary is returned"""
+    #     r = Rectangle(2, 6, 4, 5)
+    #     self.assertEqual(r.to_dictionary(),
+    #     {'id': 1, 'width': 2, 'height': 6, 'x': 4, 'y': 5})
+
+    
