@@ -113,3 +113,5 @@ class Rectangle(Base):
         for i in lst_attr:
             rec_dict[i] = getattr(self, i)
         return rec_dict
+
+    
