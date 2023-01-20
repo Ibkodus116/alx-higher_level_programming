@@ -130,3 +130,58 @@ class TestCaseModels(unittest.TestCase):
             os.remove("Rectangle.json")
         except:
             pass
+
+    def test_from_json_string (self):
+        """ Test from JSON to obj"""
+
+        json_str = '[{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}, {"id": 2, "width": 2, "height": 4, "x": 0, "y": 0}]'
+        res = [{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8},
+                {"id": 2, "width": 2, "height": 4, "x": 0, "y": 0}]
+
+        self.assertEqual(Rectangle.from_json_string(json_str), res)
+
+    def test_from_json_string2 (self):
+        """ Test from JSON to obj"""
+
+        json_str = '[23, 34, 45]'
+        res = [23, 34, 45]
+
+        self.assertEqual(Rectangle.from_json_string(json_str), res)
+
+    def test_from_json_string3 (self):
+        """ Test from JSON to obj"""
+
+        json_str = None
+        res = []
+
+        self.assertEqual(Rectangle.from_json_string(json_str), res)
+
+    def test_from_json_string4 (self):
+        """ Test from JSON to obj"""
+        json_str = [1,2,3]
+        with self.assertRaises(TypeError):
+            Rectangle.from_json_string(json_str)
+
+    def test_create (self):
+        """Testing the create method"""
+        r = Rectangle(3, 5, 1).to_dictionary()
+        r1 = Rectangle.create(**r)
+        res = "[Rectangle] (1) 1/0 - 3/5\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(r1)
+            self.assertEqual(str_out.getvalue(), res)
+
+    def test_create_2 (self):
+        """Testing the create method"""
+        r = Rectangle(3, 5, 1).to_dictionary()
+        with self.assertRaises(TypeError):
+            Rectangle.create(r)
+
+    def test_create_3 (self):
+        """Testing the create method"""
+        r = Square(3, 5, 1, 4).to_dictionary()
+        r1 = Square.create(**r)
+        res = "[Square] (4) 5/1 - 3\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            print(r1)
+            self.assertEqual(str_out.getvalue(), res)
