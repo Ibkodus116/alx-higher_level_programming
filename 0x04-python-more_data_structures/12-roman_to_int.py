@@ -24,15 +24,14 @@ def roman_to_int(roman_string):
     num = 0
     rom_list = list(rom)
 
-#    for i in roman_string:
-#        if i in rom_list:
-#            num += rom[i]
     while i < len(roman_string):
         two = roman_string[i:i+2]
         if two in rom_list:
             num += rom[two]
             i += 1
         else:
+            if roman_string[i] not in rom_list:
+                return 0
             num += rom[roman_string[i]]
         i += 1
     return num
