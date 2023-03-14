@@ -10,4 +10,6 @@ if (sqr) {
   for (let j = 0; j < sqr; j++) {
     console.log(str);
   }
+}else {
+  console.log('Missing size');
 }
