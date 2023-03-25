@@ -28,8 +28,11 @@ if __name__ == '__main__':
     # Excecute MySQL Queries
 
     cur.execute(
-        'SELECT * FROM states WHERE name=%s ORDER BY id ASC',
-        (state_name,)
+        """
+        SELECT * FROM states WHERE CONVERT
+        (`name` USING Latin1) COLLATE
+        Latin1_General_CS = "{}";
+        """.format(state_name)
         )
 
 # Printing each row
