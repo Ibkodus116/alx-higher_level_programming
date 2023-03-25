@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 A script that lists all cities
 from the database hbtn_0e_4_usa
@@ -25,7 +24,6 @@ if __name__ == '__main__':
                 WHERE cities.state_id = states.id ORDER BY cities.id ASC;
                 """
                 )
-
     # fecth all info and print
     for row in cur.fetchall():
         print(row)
