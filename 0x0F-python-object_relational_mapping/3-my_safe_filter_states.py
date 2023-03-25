@@ -17,7 +17,7 @@ if __name__ == '__main__':
     # Connect to SQL
     db = MySQLdb.connect(
         db=database_name,
-        host='localhost',
+        port=3306,
         user=mysql_username,
         passwd=mysql_password,
         )
@@ -27,7 +27,7 @@ if __name__ == '__main__':
 
     # Excecute MySQL Queries
 
-    query ="SELECT * FROM states WHERE CONVERT name=%s;"
+    query = "SELECT * FROM states WHERE CONVERT name=%s;"
     cur.execute(query, (state_name,))
 
 
