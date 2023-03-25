@@ -27,13 +27,9 @@ if __name__ == '__main__':
 
     # Excecute MySQL Queries
 
-    cur.execute(
-        """
-        SELECT * FROM states WHERE CONVERT
-        (`name` USING Latin1) COLLATE
-        Latin1_General_CS = "{}";
-        """.format(state_name)
-        )
+    query ="SELECT * FROM states WHERE CONVERT name=%s;"
+    cur.execute(query, (state_name,))
+
 
 # Printing each row
     for row in cur.fetchall():
