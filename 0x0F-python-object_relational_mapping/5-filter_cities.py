@@ -25,8 +25,6 @@ if __name__ == '__main__':
 
     # fetch the row and print
     rows = cur.fetchall()
-    output = ", ".join(row[0] for row in rows[:-1])
-    if output:
-        output += ", "
-    output += rows[-1][0]
+
+    output = ", ".join(row[0] for row in rows)
     print(output)
