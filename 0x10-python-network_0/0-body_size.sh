@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Check if the script was called with a URL
 if [ $# -eq 0 ]; then
