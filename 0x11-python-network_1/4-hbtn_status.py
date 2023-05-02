@@ -10,5 +10,5 @@ if __name__ == '__main__':
     http = requests.get(url)
 
     print('Body response:')
-    print(f'\ttype: {type(http.text)}')
-    print(f'\tcontent: {http.text}')
+    print(f'\t- type: {type(http.text)}')
+    print(f'\t- content: {http.text}')
